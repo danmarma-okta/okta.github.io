@@ -33,20 +33,10 @@ curl -X POST
     "origin": "http://example.com",
     "scopes": [
         {
-            "type": "CORS",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "CORS"
         },
         {
-            "type": "REDIRECT",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "REDIRECT"
         }
     ]
 }' "https://{yourOktaDomain}.com/api/v1/trustedOrigins"
@@ -62,20 +52,10 @@ curl -X POST
     "status": "ACTIVE",
     "scopes": [
         {
-            "type": "CORS",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "CORS"
         },
         {
-            "type": "REDIRECT",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "REDIRECT"
         }
     ],
     "created": "2018-01-13T01:11:44.000Z",
@@ -118,20 +98,10 @@ curl -X POST
     "origin": "example.com",
     "scopes": [
         {
-            "type": "CORS",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "CORS"
         },
         {
-            "type": "REDIRECT",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "REDIRECT"
         }
     ]
 }
@@ -189,20 +159,10 @@ curl -X GET \
         "origin": "http://example.com",
         "scopes": [
             {
-                "type": "CORS",
-                "params": {
-                    "sampleNum": 17,
-                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                    "sampleBool": true
-                }
+                "type": "CORS"
             },
             {
-                "type": "REDIRECT",
-                "params": {
-                    "sampleNum": 17,
-                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                    "sampleBool": true
-                }
+                "type": "REDIRECT"
             }
         ],
         "status": "ACTIVE",
@@ -248,7 +208,7 @@ A subset of trusted origins can be returned that match a supported filter expres
 
 | Parameter  | Description                                                                                                                                     | Param Type | DataType | Required |
 |:-----------|:------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:---------|:---------|
-| filter     | [Filter](/docs/api/getting_started/design_principles.html#filtering) Trusted Origins with a supported expression for a subset of properties     | Query      | String   |    No    |
+| filter     | [Filter](/docs/api/getting_started/design_principles.html#filtering) Trusted origins with a supported expression for a subset of properties     | Query      | String   |    No    |
 | limit      | Specifies the number of results returned                                                                                                        | Query      | Integer  |    No    |
 
 ##### Response Parameters
@@ -281,12 +241,7 @@ curl -X GET \
         "origin": "http://example.com",
         "scopes": [
             {
-                "type": "CORS",
-                "params": {
-                    "sampleNum": 17,
-                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                    "sampleBool": true
-                }
+                "type": "CORS"
             }
         ],
         "status": "ACTIVE",
@@ -321,20 +276,10 @@ curl -X GET \
         "origin": "https://rf.example.com",
         "scopes": [
             {
-                "type": "CORS",
-                "params": {
-                    "sampleNum": 17,
-                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                    "sampleBool": true
-                }
+                "type": "CORS"
             },
             {
-                "type": "REDIRECT",
-                "params": {
-                    "sampleNum": 17,
-                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                    "sampleBool": true
-                }
+                "type": "REDIRECT"
             }
         ],
         "status": "ACTIVE",
@@ -369,20 +314,10 @@ curl -X GET \
         "origin": "http://yato.example.com",
         "scopes": [
             {
-                "type": "CORS",
-                "params": {
-                    "sampleNum": 17,
-                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                    "sampleBool": true
-                }
+                "type": "CORS"
             },
             {
-                "type": "REDIRECT",
-                "params": {
-                    "sampleNum": 17,
-                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                    "sampleBool": true
-                }
+                "type": "REDIRECT"
             }
         ],
         "status": "ACTIVE",
@@ -443,12 +378,7 @@ curl -X GET \
         "origin": "http://example.com",
         "scopes": [
             {
-                "type": "CORS",
-                "params": {
-                    "sampleNum": 17,
-                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                    "sampleBool": true
-                }
+                "type": "CORS"
             }
         ],
         "status": "ACTIVE",
@@ -483,20 +413,10 @@ curl -X GET \
         "origin": "https://rf.example.com",
         "scopes": [
             {
-                "type": "CORS",
-                "params": {
-                    "sampleNum": 17,
-                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                    "sampleBool": true
-                }
+                "type": "CORS"
             },
             {
-                "type": "REDIRECT",
-                "params": {
-                    "sampleNum": 17,
-                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                    "sampleBool": true
-                }
+                "type": "REDIRECT"
             }
         ],
         "status": "ACTIVE",
@@ -561,20 +481,10 @@ curl -X PUT
     "origin": "http://updated.example.com",
     "scopes": [
         {
-            "type": "CORS",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "CORS"
         },
         {
-            "type": "REDIRECT",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "REDIRECT"
         }
     ],
     "status": "ACTIVE",
@@ -615,20 +525,10 @@ curl -X PUT
     "origin": "http://updated.example.com",
     "scopes": [
         {
-            "type": "CORS",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "CORS"
         },
         {
-            "type": "REDIRECT",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "REDIRECT"
         }
     ],
     "status": "ACTIVE",
@@ -697,12 +597,7 @@ curl -X POST
     "origin": "https://rf.example.com",
     "scopes": [
         {
-            "type": "CORS",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "CORS"
         }
     ],
     "status": "ACTIVE",
@@ -771,12 +666,7 @@ curl -X POST
     "origin": "https://rf.example.com",
     "scopes": [
         {
-            "type": "CORS",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "CORS"
         }
     ],
     "status": "INACTIVE",
@@ -848,57 +738,34 @@ Passing an invalid trusted origin ID returns a `404 Not Found` status code with 
 
 ### Trusted Origin Properties
 
-A Trusted Origin defines several attributes:
+A trusted origin defines several attributes:
 
 |Field Name    | Description                                                | Data Type                               | Required      | Max Length      |
 |:-------------|:-----------------------------------------------------------|:----------------------------------------|:--------------|:----------------|
-|id            | Unique identifier for this Trusted Origin                  | String                                  | No (Assigned) | N/A             |
-|name          | Unique name for this Trusted Origin                        | String                                  | Yes           | 255 (chars)     |
-|origin        | Unique origin URL for this Trusted Origin                  | String                                  | Yes           | 255 (chars)     |
-|scopes        | Array of scope types for which this Trusted Origin is used | Array of [Scope Objects](#scope-object) | Yes           | 2 (scope types) |
+|id            | Unique identifier for this trusted origin                  | String                                  | No (Assigned) | N/A             |
+|name          | Unique name for this trusted origin                        | String                                  | Yes           | 255 (chars)     |
+|origin        | Unique origin URL for this trusted origin                  | String                                  | Yes           | 255 (chars)     |
+|scopes        | Array of scope types for which this trusted origin is used | Array of [Scope Objects](#scope-object) | Yes           | 2 (scope types) |
 
 #### Scope Object
 
-Each scope object specifies the type of scope for which its Trusted Origin is used, as well a params object. 
+Each scope object specifies the type of scope for which its trusted origin is used
 
 |Field Name | Description                                                  | Data Type                       | Required |
 |:----------|:-------------------------------------------------------------|:--------------------------------|:---------|
 |type       | Type of the scope: either "CORS" or "REDIRECT"               | String                          |   Yes    |
-|params     | Params object specifying params to include, and their values | [Params Object](#params-object) |   No     |
 
 #### Scope Object Example (CORS)
 ~~~json
 {
-    "type": "CORS",
-    "params": {
-        "allowCredentials": true,
-        "maxAge": 72
-    }
+    "type": "CORS"
 }
 ~~~
 
 #### Scope Object Example (REDIRECT)
 ~~~json
 {
-    "type": "REDIRECT",
-    "params": {
-        "sampleNum": 17,
-        "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-        "sampleBool": true
-    }
-}
-~~~
-
-##### Params Object
-
-Each params object specifies the params to include with the trusted origin base URL, as well as their values.
-
-##### Params Object Example
-~~~json
-{
-    "activateFeature": true,
-    "sessionLifetime": 3600,
-    "nestedRedirectUri": "https://goto.example.com"
+    "type": "REDIRECT"
 }
 ~~~
 
@@ -910,20 +777,10 @@ Each params object specifies the params to include with the trusted origin base 
     "origin": "http://example.example.com",
     "scopes": [
         {
-            "type": "CORS",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "CORS"
         },
         {
-            "type": "REDIRECT",
-            "params": {
-                "sampleNum": 17,
-                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
-                "sampleBool": true
-            }
+            "type": "REDIRECT"
         }
     ],
     "status": "ACTIVE",
