@@ -29,17 +29,24 @@ curl -X POST
 -H "Authorization: SSWS ${api_token}" \
 -d '
 {
-    "id": null,
     "name": "New Trusted Origin",
     "origin": "http://example.com",
     "scopes": [
         {
             "type": "CORS",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         },
         {
             "type": "REDIRECT",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         }
     ]
 }' "https://{yourOktaDomain}.com/api/v1/trustedOrigins"
@@ -55,11 +62,19 @@ curl -X POST
     "scopes": [
         {
             "type": "CORS",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         },
         {
             "type": "REDIRECT",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         }
     ],
     "status": "ACTIVE",
@@ -99,17 +114,24 @@ curl -X POST
 -H "Authorization: SSWS ${api_token}" \
 -d '
 {
-    "id": null,
     "name": "Trusted Origin with Invalid Origin Value",
     "origin": "example.com",
     "scopes": [
         {
             "type": "CORS",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         },
         {
             "type": "REDIRECT",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         }
     ]
 }
@@ -140,7 +162,14 @@ Gets a Trusted Origin by id
 #### Request Parameters
 {:.api .api-request .api-request-params}
 
-The Trusted Origin ID described in the [Trusted Origin Object](#TrustedOriginModel) is required.
+Parameter | Description              | Param Type | DataType | Required |
+--------- | ------------------------ | ---------- | -------- | -------- |
+id        | `id` of a Trusted Origin | URL        | String   | Yes      |
+
+#### Response Parameters
+{:.api .api-response .api-response-params}
+
+[Trusted Origin Object](#trusted-origin-model)
 
 #### Request Example
 {:.api .api-request .api-request-example}
@@ -161,11 +190,19 @@ curl -X GET \
         "scopes": [
             {
                 "type": "CORS",
-                "params": null
+                "params": {
+                    "sampleNum": 17,
+                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                    "sampleBool": true
+                }
             },
             {
                 "type": "REDIRECT",
-                "params": null
+                "params": {
+                    "sampleNum": 17,
+                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                    "sampleBool": true
+                }
             }
         ],
         "status": "ACTIVE",
@@ -217,7 +254,7 @@ A subset of Trusted Origins can be returned that match a supported filter expres
 ##### Response Parameters
 {:.api .api-response .api-response-params}
 
-Array of [Trusted Origins](#TrustedOriginModel)
+Array of [Trusted Origins](#trusted-origin-model)
 
 #### List All Trusted Origins
 {:.api .api-operation}
@@ -245,7 +282,11 @@ curl -X GET \
         "scopes": [
             {
                 "type": "CORS",
-                "params": null
+                "params": {
+                    "sampleNum": 17,
+                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                    "sampleBool": true
+                }
             }
         ],
         "status": "ACTIVE",
@@ -281,11 +322,19 @@ curl -X GET \
         "scopes": [
             {
                 "type": "CORS",
-                "params": null
+                "params": {
+                    "sampleNum": 17,
+                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                    "sampleBool": true
+                }
             },
             {
                 "type": "REDIRECT",
-                "params": null
+                "params": {
+                    "sampleNum": 17,
+                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                    "sampleBool": true
+                }
             }
         ],
         "status": "ACTIVE",
@@ -321,11 +370,19 @@ curl -X GET \
         "scopes": [
             {
                 "type": "CORS",
-                "params": null
+                "params": {
+                    "sampleNum": 17,
+                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                    "sampleBool": true
+                }
             },
             {
                 "type": "REDIRECT",
-                "params": null
+                "params": {
+                    "sampleNum": 17,
+                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                    "sampleBool": true
+                }
             }
         ],
         "status": "ACTIVE",
@@ -387,7 +444,11 @@ curl -X GET \
         "scopes": [
             {
                 "type": "CORS",
-                "params": null
+                "params": {
+                    "sampleNum": 17,
+                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                    "sampleBool": true
+                }
             }
         ],
         "status": "ACTIVE",
@@ -423,11 +484,19 @@ curl -X GET \
         "scopes": [
             {
                 "type": "CORS",
-                "params": null
+                "params": {
+                    "sampleNum": 17,
+                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                    "sampleBool": true
+                }
             },
             {
                 "type": "REDIRECT",
-                "params": null
+                "params": {
+                    "sampleNum": 17,
+                    "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                    "sampleBool": true
+                }
             }
         ],
         "status": "ACTIVE",
@@ -469,7 +538,14 @@ Updates an existing Trusted Origin
 #### Request Parameters
 {:.api .api-request .api-request-params}
 
-The Trusted Origin ID described in the [Trusted Origin Object](#TrustedOriginModel) is required.
+Parameter | Description              | Param Type | DataType | Required |
+--------- | ------------------------ | ---------- | -------- | -------- |
+id        | `id` of a Trusted Origin | URL        | String   | Yes      |
+
+#### Response Parameters
+{:.api .api-response .api-response-params}
+
+[Trusted Origin Object](#trusted-origin-model)
 
 #### Request Example
 {:.api .api-request .api-request-example}
@@ -486,11 +562,19 @@ curl -X PUT
     "scopes": [
         {
             "type": "CORS",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         },
         {
             "type": "REDIRECT",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         }
     ],
     "status": "ACTIVE",
@@ -532,11 +616,19 @@ curl -X PUT
     "scopes": [
         {
             "type": "CORS",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         },
         {
             "type": "REDIRECT",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         }
     ],
     "status": "ACTIVE",
@@ -577,7 +669,14 @@ Activate an existing Trusted Origin
 #### Request Parameters
 {:.api .api-request .api-request-params}
 
-The Trusted Origin ID described in the [Trusted Origin Object](#TrustedOriginModel) is required.
+Parameter | Description              | Param Type | DataType | Required |
+--------- | ------------------------ | ---------- | -------- | -------- |
+id        | `id` of a Trusted Origin | URL        | String   | Yes      |
+
+#### Response Parameters
+{:.api .api-response .api-response-params}
+
+[Trusted Origin Object](#trusted-origin-model)
 
 #### Request Example
 {:.api .api-request .api-request-example}
@@ -599,7 +698,11 @@ curl -X POST
     "scopes": [
         {
             "type": "CORS",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         }
     ],
     "status": "ACTIVE",
@@ -640,7 +743,14 @@ Deactivate an existing Trusted Origin
 #### Request Parameters
 {:.api .api-request .api-request-params}
 
-The Trusted Origin ID described in the [Trusted Origin Object](#TrustedOriginModel) is required.
+Parameter | Description              | Param Type | DataType | Required |
+--------- | ------------------------ | ---------- | -------- | -------- |
+id        | `id` of a Trusted Origin | URL        | String   | Yes      |
+
+#### Response Parameters
+{:.api .api-response .api-response-params}
+
+[Trusted Origin Object](#trusted-origin-model)
 
 #### Request Example
 {:.api .api-request .api-request-example}
@@ -662,7 +772,11 @@ curl -X POST
     "scopes": [
         {
             "type": "CORS",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         }
     ],
     "status": "INACTIVE",
@@ -703,7 +817,14 @@ Delete an existing Trusted Origin
 #### Request Parameters
 {:.api .api-request .api-request-params}
 
-The Trusted Origin ID described in the [Trusted Origin Object](#TrustedOriginModel) is required.
+Parameter | Description              | Param Type | DataType | Required |
+--------- | ------------------------ | ---------- | -------- | -------- |
+id        | `id` of a Trusted Origin | URL        | String   | Yes      |
+
+#### Response Parameters
+{:.api .api-response .api-response-params}
+
+[Trusted Origin Object](#trusted-origin-model)
 
 #### Request Example
 {:.api .api-request .api-request-example}
@@ -723,7 +844,7 @@ Returns an empty object.
 Passing an invalid Trusted Origin ID returns a `404 Not Found` status code with error code `E0000007`.
 
 ## Trusted Origin Model
-{: #TrustedOriginModel }
+{: #trusted-origin-model }
 
 ### Trusted Origin Properties
 
@@ -760,7 +881,11 @@ Each scope object specifies the type of scope for which its Trusted Origin is us
 ~~~json
 {
     "type": "REDIRECT",
-    "params": null
+    "params": {
+        "sampleNum": 17,
+        "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+        "sampleBool": true
+    }
 }
 ~~~
 
@@ -786,12 +911,18 @@ Each params object specifies the params to include with the Trusted Origin base 
     "scopes": [
         {
             "type": "CORS",
-            "params": null
+            "params": {
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
+            }
         },
         {
             "type": "REDIRECT",
             "params": {
-                "exampleBoolean": false
+                "sampleNum": 17,
+                "sampleStr": "b201cb59-acbd-4600-80e4-cc165eeb4831",
+                "sampleBool": true
             }
         }
     ],
