@@ -7,9 +7,9 @@ title: Trusted Origins
 
 The Okta Trusted Origins API provides operations to manage trusted origins and sources.
 
-Trusted Origin URLs may be leveraged to redirect users to custom screens or enable browser-based applications to access Okta APIs from Javascript (CORS).
-
-
+When external URLs are requested during login, logout, or recovery operations, Okta checks those URLs against the whitelist of trusted origins.
+Trusted origins also enable browser-based applications to access Okta APIs from Javascript (CORS).
+If the origins are not specified, the related operation (redirect or Okta API access) would not be permitted.
 
 ## Trusted Origins API Operations
 
@@ -18,7 +18,7 @@ Trusted Origin URLs may be leveraged to redirect users to custom screens or enab
 
 {% api_operation post /api/v1/trustedOrigins %}
 
-Creates a new Trusted Origin
+Creates a new trusted origin
 
 #### Valid Request Example
 {:.api .api-request .api-request-example}
@@ -59,6 +59,7 @@ curl -X POST
     "id": "tos10hu7rkbtrFt1M0g4",
     "name": "New Trusted Origin",
     "origin": "http://example.com",
+    "status": "ACTIVE",
     "scopes": [
         {
             "type": "CORS",
@@ -77,7 +78,6 @@ curl -X POST
             }
         }
     ],
-    "status": "ACTIVE",
     "created": "2018-01-13T01:11:44.000Z",
     "createdBy": "00ut5t92p6IEOi4bu0g3",
     "lastUpdated": "2018-01-13T01:11:44.000Z",
@@ -157,14 +157,14 @@ curl -X POST
 ### Get Trusted Origin
 {% api_operation get /api/v1/trustedOrigins/*:trustedOriginId* %}
 
-Gets a Trusted Origin by id
+Gets a trusted origin by ID
 
 #### Request Parameters
 {:.api .api-request .api-request-params}
 
-Parameter | Description              | Param Type | DataType | Required |
---------- | ------------------------ | ---------- | -------- | -------- |
-id        | `id` of a Trusted Origin | URL        | String   | Yes      |
+Parameter         | Description              | Param Type | DataType | Required |
+----------------- | ------------------------ | ---------- | -------- | -------- |
+`trustedOriginId` | `id` of a trusted origin | String     | String   | Yes      |
 
 #### Response Parameters
 {:.api .api-response .api-response-params}
@@ -236,9 +236,9 @@ curl -X GET \
 ### List Trusted Origins
 {% api_operation get /api/v1/trustedOrigins %}
 
-Lists all Trusted Origins
+Lists all trusted origins
 
-A subset of Trusted Origins can be returned that match a supported filter expression or query criteria.
+A subset of trusted origins can be returned that match a supported filter expression or query criteria.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
@@ -259,7 +259,7 @@ Array of [Trusted Origins](#trusted-origin-model)
 #### List All Trusted Origins
 {:.api .api-operation}
 
-Returns a list of all Trusted Origins
+Returns a list of all trusted origins
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -417,7 +417,7 @@ curl -X GET \
 #### List Trusted Origins with a Filter
 {:.api .api-operation}
 
-Lists all Trusted Origins that match the filter criteria
+Lists all trusted origins that match the filter criteria
 
 This operation requires [URL encoding](/docs/api/getting_started/design_principles.html#filtering). For example, `filter=(id eq "tosue7JvguwJ7U6kz0g3" or id eq "tos10hzarOl8zfPM80g4")` is encoded as `filter=%28id+eq+%22tosue7JvguwJ7U6kz0g3%22+or+id+eq+%22tos10hzarOl8zfPM80g4%22%29`.
 
@@ -533,14 +533,14 @@ curl -X GET \
 
 {% api_operation put /api/v1/trustedOrigins/*:trustedOriginId* %}
 
-Updates an existing Trusted Origin
+Updates an existing trusted origin
 
 #### Request Parameters
 {:.api .api-request .api-request-params}
 
-Parameter | Description              | Param Type | DataType | Required |
---------- | ------------------------ | ---------- | -------- | -------- |
-id        | `id` of a Trusted Origin | URL        | String   | Yes      |
+Parameter         | Description              | Param Type | DataType | Required |
+----------------- | ------------------------ | ---------- | -------- | -------- |
+`trustedOriginId` | `id` of a trusted origin | String     | String   | Yes      |
 
 #### Response Parameters
 {:.api .api-response .api-response-params}
@@ -664,14 +664,14 @@ curl -X PUT
 
 {% api_operation post /api/v1/trustedOrigins/*:trustedOriginId*/lifecycle/activate %}
 
-Activate an existing Trusted Origin
+Activates an existing trusted origin
 
 #### Request Parameters
 {:.api .api-request .api-request-params}
 
-Parameter | Description              | Param Type | DataType | Required |
---------- | ------------------------ | ---------- | -------- | -------- |
-id        | `id` of a Trusted Origin | URL        | String   | Yes      |
+Parameter         | Description              | Param Type | DataType | Required |
+----------------- | ------------------------ | ---------- | -------- | -------- |
+`trustedOriginId` | `id` of a trusted origin | String     | String   | Yes      |
 
 #### Response Parameters
 {:.api .api-response .api-response-params}
@@ -738,14 +738,14 @@ curl -X POST
 
 {% api_operation post /api/v1/trustedOrigins/*:trustedOriginId*/lifecycle/deactivate %}
 
-Deactivate an existing Trusted Origin
+Deactivates an existing trusted origin
 
 #### Request Parameters
 {:.api .api-request .api-request-params}
 
-Parameter | Description              | Param Type | DataType | Required |
---------- | ------------------------ | ---------- | -------- | -------- |
-id        | `id` of a Trusted Origin | URL        | String   | Yes      |
+Parameter         | Description              | Param Type | DataType | Required |
+----------------- | ------------------------ | ---------- | -------- | -------- |
+`trustedOriginId` | `id` of a trusted origin | String     | String   | Yes      |
 
 #### Response Parameters
 {:.api .api-response .api-response-params}
@@ -812,14 +812,14 @@ curl -X POST
 
 {% api_operation delete /api/v1/trustedOrigins/*:trustedOriginId* %}
 
-Delete an existing Trusted Origin
+Deletes an existing trusted origin
 
 #### Request Parameters
 {:.api .api-request .api-request-params}
 
-Parameter | Description              | Param Type | DataType | Required |
---------- | ------------------------ | ---------- | -------- | -------- |
-id        | `id` of a Trusted Origin | URL        | String   | Yes      |
+Parameter         | Description              | Param Type | DataType | Required |
+----------------- | ------------------------ | ---------- | -------- | -------- |
+`trustedOriginId` | `id` of a trusted origin | String     | String   | Yes      |
 
 #### Response Parameters
 {:.api .api-response .api-response-params}
@@ -841,7 +841,7 @@ curl -X DELETE
 
 Returns an empty object.
 
-Passing an invalid Trusted Origin ID returns a `404 Not Found` status code with error code `E0000007`.
+Passing an invalid trusted origin ID returns a `404 Not Found` status code with error code `E0000007`.
 
 ## Trusted Origin Model
 {: #trusted-origin-model }
@@ -891,7 +891,7 @@ Each scope object specifies the type of scope for which its Trusted Origin is us
 
 ##### Params Object
 
-Each params object specifies the params to include with the Trusted Origin base URL, as well as their values.
+Each params object specifies the params to include with the trusted origin base URL, as well as their values.
 
 ##### Params Object Example
 ~~~json
