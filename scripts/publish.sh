@@ -9,13 +9,13 @@ declare -A branch_environment_map
 branch_environment_map[source]=developer-okta-com-prod
 branch_environment_map[weekly]=developer-okta-com-preprod
 
-# Check if we are in one of our publish branches
-if [[ -z "${branch_environment_map[$BRANCH]+unset}" ]]; then
-    echo "Current branch is not a publish branch"
-    exit $SUCCESS
-else
-    DEPLOY_ENVIRONMENT=${branch_environment_map[$BRANCH]}
-fi
+# # Check if we are in one of our publish branches
+# if [[ -z "${branch_environment_map[$BRANCH]+unset}" ]]; then
+#     echo "Current branch is not a publish branch"
+#     exit $SUCCESS
+# else
+#     DEPLOY_ENVIRONMENT=${branch_environment_map[$BRANCH]}
+# fi
 
 source "${0%/*}/setup.sh"
 source "${0%/*}/helpers.sh"
@@ -25,9 +25,6 @@ require_env_var "BRANCH"
 require_env_var "REPO"
 
 export TEST_SUITE_TYPE="build"
-
-npm install -g @okta/ci-update-package
-npm install -g @okta/ci-pkginfo
 
 # `cd` to the path where Okta's build system has this repository
 cd ${OKTA_HOME}/${REPO}
@@ -39,10 +36,42 @@ then
     exit ${BUILD_FAILURE};
 fi
 
+# Copy assets and previous history into dist
+if ! npm run postbuild-prod;
+then
+    exit ${BUILD_FAILURE};
+fi
+
 if ! removeHTMLExtensions;
 then
     echo "Failed removing .html extensions"
     exit ${BUILD_FAILURE};
+fi
+
+# Run Lint checker
+if ! npm run post-build-lint;
+then
+    exit ${BUILD_FAILURE}
+fi
+
+# Run find-missing-slashes to find links that will redirect to okta.github.io
+if ! npm run find-missing-slashes;
+then
+    exit ${BUILD_FAILURE}
+fi
+
+# Run htmlproofer to validate links, scripts, and images
+if ! bundle exec ./scripts/htmlproofer.rb false;
+then
+    exit ${BUILD_FAILURE}
+fi
+
+# Check if we are in one of our publish branches
+if [[ -z "${branch_environment_map[$BRANCH]+unset}" ]]; then
+    echo "Current branch is not a publish branch"
+    exit $SUCCESS
+else
+    DEPLOY_ENVIRONMENT=${branch_environment_map[$BRANCH]}
 fi
 
 interject "Generating conductor file in $(pwd)"

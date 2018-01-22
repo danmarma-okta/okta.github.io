@@ -14,3 +14,14 @@ fi
 if [[ -z "${SUCCESS}" ]]; then
     export SUCCESS=0
 fi
+
+# Use newer, faster npm
+npm install -g npm@5.0.3
+
+# Install required dependencies
+npm install -g @okta/ci-update-package
+npm install -g @okta/ci-pkginfo
+npm install -g n
+
+# Use latest version of Node
+n 0.9.4.0
