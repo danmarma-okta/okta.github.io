@@ -24,4 +24,4 @@ npm install -g @okta/ci-pkginfo
 npm install -g n
 
 # Use latest version of Node
-n 0.9.4.0
+n 0.9.4
